@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="project.css">
+    <title>LOGIN IN</title>
+</head>
+<body class="main-container">
+    <header>
+        <div class="nav-top">
+            <div>
+               <a  style="color: gold;" href="homepage.html">ProMart</a> 
+            </div>
+            <div style="display: flex;">
+                <div class="nav-box">
+                    <input type="text" class="search" name="search" placeholder="Search..">
+                </div>
+                <div class="nav-box" onclick="openSide('cartpage')">
+                    <img src="images/cart.png" alt="cart"><small id="cartno">0</small>
+                </div>
+                <div class="nav-box drop" onclick="dropbar()">
+                    <img id="account" src="images/user.png" alt="user">
+                    <div class="dropdown" id="dropdown">
+                        <a href="signup.html">Sign Up</a>
+                        <a href="login.html">Login In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </header>
+    <div class="mother" style="margin-top: 100px;">
+        <div>
+            <p class="text">LOGIN HERE</p>
+        </div>
+        <div class="container">
+            <div>
+                <label for="">Username:</label><br>
+                <input type="text">
+            </div>
+            <div>
+                <label for="">Password:</label><br>
+                <input type="password">
+            </div>
+            <div>
+                <a href="signup.html">Don't have an account?</a>
+            </div>
+        </div><br>
+        <div>
+            <button>
+                Login In
+            </button>
+        </div>
+    </div>
+    <script src="project.js"></script>
+</body>
+</html>

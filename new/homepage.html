@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" style=" background-color: rgba(152, 179, 180, 0.815);">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="project.css">
+    <title>ProMart</title>
+</head>
+<body  class="main-container">
+<!--nav bars-->
+<header>
+    <div class="nav-top">
+        <div>
+           <a  style="color: gold;" href="homepage.html">ProMart</a> 
+        </div>
+        <div style="display: flex;">
+            <div class="nav-box">
+                <input type="text" class="search" name="search" placeholder="Search..">
+            </div>
+            <div class="nav-box" onclick="openSide('cartpage')">
+                <img src="images/cart.png" alt="cart"><small id="cartno">0</small>
+            </div>
+            <div class="nav-box drop" onclick="dropbar()">
+                <img id="account" src="images/user.png" alt="user">
+                <div class="dropdown" id="dropdown">
+                    <a href="signup.html">Sign Up</a>
+                    <a href="login.html">Log In</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-bottom tab">
+        <div>
+            <button class="menubar" onclick="openSidebar()//,menuicon(this)"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></button>
+            <button class="tablinks" onclick="openTab(event,'Home')">Home</button>
+            <button class="tablinks" id="defaultOpen" onclick="openTab(event,'Categories')">Categories</button>
+            <button class="tablinks" onclick="openTab(event,'Fashion')">Fashion</button>
+            <button class="tablinks" onclick="openTab(event,'Books')">Books</button>
+            <button class="tablinks" onclick="openTab(event,'Electronics')">Electronics</button>   
+        </div>
+        <div>
+            <button class="tablinks" onclick="openTab(event,'Sell_Items')">Sell Items</button>
+        </div>
+    </div>
+</header>
+<!--sidebar-->
+<div id="sidebar" class="sidebar">
+    <p href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</p>
+    <a onclick="openSide('Categories')">Categories</a>
+    <ul>
+        <li>Trending</li>
+        <li>This week's selection</li>
+        <li>Top deals</li>
+    </ul>
+    <a onclick="openSide('Fashion')">Fashion</a>
+    <a href="#">Books</a>
+    <a href="#">Electronics</a>
+</div>
+<!--HOME TAB-->
+<div class="tabcontent" id="Home">
+<!--slides-->
+    <div class="slide-container">
+        <div class="mySlides fade">
+            <div class="square" ><img src="images/smartphone.jpeg" alt=""></div>
+        </div>
+        <div class="mySlides fade">
+            <div class="square" style="background-image: url();"><img src="images/black-friday.jpg" alt=""></div>
+        </div>
+        <div class="mySlides fade">
+            <div class="square" style="background-image: url();">3</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="square" style="background-image: url();">4</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="homeslide">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 100px;">
+        <div><div class="square" style="background-image: url(images/best-selling.png);"></div><p>Top selling items</p></div>
+        <div><div class="square" style="background-image: url(images/essential2.png);"></div><p>Essentials</p></div>
+        <div><div class="square" style="background-image: url(images/discounts2.jpg);"></div><p>Discounts</p></div>
+    </div>
+    <div class="row">
+        <div class="circle"><p>Top products</p></div>
+        <div class="circle"><p>Top deals</p></div>
+        <div class="circle"><p>Available products</p></div>
+        <div class="circle"><p>Supermarket</p></div>
+        <div class="circle"><p>Fresh products</p></div>
+        <div class="circle"><p></p></div>
+    </div>
+    <div class="row">
+        <div><div class="square" style="background-image: url(images/images2.jpeg);"></div><p>Outdoor Accesories</p></div>
+        <div><div class="square" style="background-image: url(images/men\'s\ fashion.jpg);"></div><p>Men's Fashion</p></div>
+        <div><div class="square" style="background-image: url(images/fashion.jpg);"></div><p>Women's Fashion</p></div>
+    </div>
+    <div class="row">
+        <div><div class="square" style="background-image: url(images/sumer-clothes-for-kids.jpg);"></div><p>Kids wear</p></div>
+        <div><div class="square" style="background-image: url(images/black-friday2.jpg);"></div><p>Black Friday</p></div>
+        <div><div class="square" style="background-image: url();"></div><p>Back to school</p></div>
+    </div>
+</div>
+<!--CATEGORIES TAB--> 
+<div id="Categories" class="main-container tabcontent">
+    <h1>Categories</h1>
+    <div>
+        <div>
+            <p>This week's selection</p>
+            <div class="product">
+                <div><img src="products/a30.jpeg" alt=""><div class="p2"><p>Samsung Galaxy A30</p><p>Shs 900000</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/hp laptop.jpeg" alt=""><div class="p2"><p>HP EliteBook G2</p><p>Shs:1000000</p></div></p><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/dugar.jpeg" alt=""><div class="p2"><p>Kakira Sugar</p><p>Shs 3000</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/saraya.jpeg" alt=""><div class="p2"><p>Sayara Hand Santizer</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/lato.jpeg" alt=""><div class="p2"><p>Lato Milk</p><p>Shs 10000</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/air7.jpeg" alt=""><div class="p2"><p>Ipad Air 7</p><p>Shs 300000</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/dpark 7.jpeg" alt=""><div class="p2"><p>Tenco Spark 7</p><p>Shs 50000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            </div>
+        </div>
+        <div>
+            <p>Trending items</p>
+            <div class="product">
+                <div><img src="products/s7.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs </p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs </p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs </p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs </p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs </p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs </p></div><button class="cartbtn musi">Add to cart</button></div>
+            </div>
+        </div>
+        <div>
+            <p>Fresh goods</p>
+            <div class="product">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div>
+            <p>New products</p>
+            <div class="product">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div>
+            <p>Supermarket</p>
+            <div class="product">
+                <div><img src="products/lato.jpeg" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/dugar.jpeg" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/saraya.jpeg" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/milk.jpeg" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/medical.jpeg" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/omo.jpeg" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/flour.jpeg" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
+            </div>
+        </div>
+        <div>
+            <p>Top Products</p>
+            <div class="product">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--FASHION TAB-->
+<div id="Fashion" class="main-container tabcontent">
+    <h1>Fashion</h1>
+    <div>
+        <p>Men's fashion</p>
+        <div class="product">
+            <div><img src="products/m2.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/m3.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/m4.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/m6.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/a1.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/a2.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/a4.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+        </div>
+        <p></p>
+        <div class="product">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div>
+        <p>Women's fashion</p>
+        <div class="product">
+            <div><img src="products/clothe1.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/clothe4.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/clthes2.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/shoe 3.webp" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/shoe1.webp" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/shoe2.webp" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/shoe5.webp" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+        </div>
+        <p></p>
+        <div class="product">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div>
+        <p>Kids fashion</p>
+        <div class="product">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p></p>
+        <div class="product">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+<!--BOOKS TAB-->
+<div id="Books" class="main-container tabcontent">
+    <h1>Books</h1>
+    <div>
+        <p>Novels</p>
+        <div class="product">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p></p>
+        <div class="product">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div>
+        <p>Educational</p>
+        <div class="product">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p></p>
+        <div class="product">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div>
+        <p>School items</p>
+        <div class="product">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p></p>
+        <div class="product">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div>
+
+    </div>
+</div>
+<!--ELECTRONICS TAB-->
+<div id="Electronics" class="main-container tabcontent">
+    <h1>Electronics</h1>
+    <div>
+        <p>Smartphones,Tablets and Computers</p>
+        <div class="product">
+            <div><img src="products/a7.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/air7.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/a12.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/a30.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/ip11.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/ip12.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/ip7.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+        </div>
+        <p></p>
+        <div class="product">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div>
+        <p>Home accesories</p>
+        <div class="product">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p></p>
+        <div class="product">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div>
+        <p>Toys</p>
+        <div class="product">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p></p>
+        <div class="product">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+<!--CART-->
+<div id="cartpage" class="main-container tabcontent">
+    <h1>Cart</h1>
+    <div id="cartdiv">
+        <div id="text">No items in cart</div>
+    </div> 
+    <div id="orderbtn">
+        <button type="submit">
+            Order
+        </button>
+    </div>
+</div>
+<!--SELL TAB-->
+<div id="Sell_Items" class="main-container tabcontent">
+    <h1>Sell Items</h1>
+    <div class="sellpage">
+        <div>
+            <label for="name">Name</label><br>
+            <input type="text">
+        </div>
+        <div>
+            <label for="description">Short description</label><br>
+            <input type="text">
+        </div>
+        <div>
+            <label for="img">Image of object</label><br>
+            <input type="file">
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+</div> 
+</body>
+<!--FOOTER-->
+<footer>
+    <div class="footer">
+        <a href="">HELP CENTER</a>
+        <a href="">CONTACT US</a>
+        <a href=""> ABOUT US</a>
+    </div>
+    <div class="line"></div>
+    <div class="footer">
+        <p>&copy;Musi&middot;</p>
+    </div>
+</footer>
+<script src="project.js"></script>
+</html>
