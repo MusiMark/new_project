@@ -88,7 +88,7 @@ function closeSidebar(){
 document.body.addEventListener('click',closeSidebar,true);
 //VALIDATION
 //CART
-const cartbtn=document.querySelector(".product");
+const cartbtn=document.querySelector(".main-container");
 const cartdiv=document.getElementById('cartdiv');
 
 cartbtn.addEventListener('click',cartbox);

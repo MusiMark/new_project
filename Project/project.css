@@ -316,10 +316,10 @@ html{
 .product div{
     width: 180px;
     height: 180px;
-    background-color: rgba(255, 248, 220, 0.479);
+    background-color: white;
     overflow: hidden;
     padding: 10px;
-    box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.397);
+    box-shadow: 1px 1px 5px 2px rgba(44, 44, 44, 0.397);
 }
 .product img{
     width: 160px;
