@@ -39,9 +39,10 @@ html{
     .slide-container{
         margin: 10px;
         max-width: 100%;
+        max-height: 50%;
     }
     .slide-container .square{
-        height: 50% !important;
+        height: 100% !important;
         width: 100% !important;
     }
     
@@ -186,6 +187,19 @@ html{
     display: flex;
     justify-content: space-between;
 }
+@media screen and (max-width:560px) {
+    .firstnav{
+        display: flex;
+        overflow: auto;
+        white-space: nowrap;
+    }
+    
+}
+@media screen and (max-width:360px) {
+    .nav-box{
+        padding-left: 2px;
+    }
+}
 /*drop-down*/
 .dropdown{
     display: none;
@@ -312,6 +326,7 @@ html{
 .product{
     display:flex; 
     justify-content:space-between;
+    margin-bottom: 20px;
 }
 .product div{
     width: 180px;
@@ -322,8 +337,8 @@ html{
     box-shadow: 1px 1px 5px 2px rgba(44, 44, 44, 0.397);
 }
 .product img{
-    width: 160px;
-    height: 100px;
+    width: 100%;
+    height: 60%;
 }
 .product p{
     margin: 0%;
@@ -334,6 +349,62 @@ html{
     height: 25%;
     padding: 0;
     box-shadow: none;
+}
+@media screen and (max-width:1350px) {
+    .product div{
+        width: 100px;
+        height: 150px;
+    }
+    .product p{
+        font-size: 10px;
+    }
+    .product button{
+        font-size: 10px;
+        width: 50px;
+    }
+}
+@media screen and (max-width:760px) {
+    h1{
+        font-size: inherit;
+    }
+    .probox{
+        background-color: white;
+       
+    }
+    .probox > p{
+        background-color: rgba(128, 128, 128, 0.26);
+        padding: 10px 0px 10px 0px;
+    }
+    .product{
+        border-bottom: 1px solid grey;
+        overflow: auto;
+        white-space:nowrap;
+    }
+    .product img{
+        width: 180px;
+    }
+    .product div{
+        width: 200px !important ;
+        height: 200px;
+        overflow: unset;
+        background:none;
+        box-shadow: none;
+    }
+    .product p{
+        font-size: initial;
+        text-align: center;
+    }
+    .product button{
+        font-size: 10px;
+        width: initial;
+        margin: auto;
+    }
+    #cartdiv{
+        width: 100% !important;
+    }
+    .cartbox{
+       flex-direction: column; 
+    }
 }
 .circle{
     background-color: red;
@@ -368,6 +439,7 @@ footer{
 .footer{
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
 }
 .footer a{
     color: black;
@@ -433,6 +505,16 @@ footer{
     padding: 15px 15px 15px 30px;
     outline: none;
     cursor: initial;
+}
+@media screen and (max-width:600px) {
+    .search:focus{
+        width:150px !important;
+    }   
+}
+@media screen and (max-width:424px) {
+    .search:focus{
+        margin-top :12px;
+    }
 }
 /*CART*/
 .nav-top small{

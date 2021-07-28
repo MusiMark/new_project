@@ -11,7 +11,7 @@
     <header>
         <div class="nav-top">
             <div>
-               <a  style="color: gold;" href="homepage.html">ProMart</a> 
+               <a  style="color: gold;" href="index.html">ProMart</a> 
             </div>
             <div style="display: flex;">
                 <div class="nav-box">
@@ -201,14 +201,12 @@
             setSuccess4(passwrd2);
         }
 
-        if (control.className != "error") {
-            plusSlides(1);            
-        }
-        
         //next page
-        //if (fnameValue,snameValue,usernmValue,passwrdValue,passwrd2Value !== "") {
-        //    plusSlides(1);
-        //}
+        if (fnameValue,snameValue,usernmValue,passwrdValue,passwrd2Value !== "") {
+            plusSlides(1);
+        }else if(control.className === "success") {
+            plusSlides(1);
+        }
     }
     function validate2(event){
         const age= document.getElementById('age');

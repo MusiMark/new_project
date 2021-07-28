@@ -5,6 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="project.css">
+    <script src="jQuery.js"></script>
+    <script>
+        $(document).ready(function(){
+    
+                var count = $("#cartdiv").find(".cartbox").length;
+                $("#cartn").text(+ count);
+                    
+        });
+    </script>
+    
     <title>ProMart</title>
 </head>
 <body  class="main-container">
@@ -12,18 +22,19 @@
 <header>
     <div class="nav-top">
         <div>
-           <a  style="color: gold;" href="homepage.html">ProMart</a> 
+           <a  style="color: gold;" href="index.html">ProMart</a> 
         </div>
         <div style="display: flex;">
             <div class="nav-box">
                 <input type="text" class="search" name="search" placeholder="Search..">
             </div>
             <div class="nav-box" onclick="openSide('cartpage')">
-                <img src="images/cart.png" alt="cart"><small id="cartno">0</small>
+                <img src="images/cart.png" alt="cart"><small id="cartn"></small>
             </div>
             <div class="nav-box drop" onclick="dropbar()">
                 <img id="account" src="images/user.png" alt="user">
                 <div class="dropdown" id="dropdown">
+                    <a href="#">Account info</a>
                     <a href="signup.html">Sign Up</a>
                     <a href="login.html">Log In</a>
                 </div>
@@ -31,12 +42,11 @@
         </div>
     </div>
     <div class="nav-bottom tab">
-        <div>
+        <div class="firstnav">
             <button class="menubar" onclick="openSidebar()//,menuicon(this)"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></button>
-            <button class="tablinks" onclick="openTab(event,'Home')">Home</button>
-            <button class="tablinks" id="defaultOpen" onclick="openTab(event,'Categories')">Categories</button>
+            <button class="tablinks" id="defaultOpen" onclick="openTab(event,'Home')">Home</button>
+            <button class="tablinks" onclick="openTab(event,'Categories')">Categories</button>
             <button class="tablinks" onclick="openTab(event,'Fashion')">Fashion</button>
-            <button class="tablinks" onclick="openTab(event,'Books')">Books</button>
             <button class="tablinks" onclick="openTab(event,'Electronics')">Electronics</button>   
         </div>
         <div>
@@ -110,19 +120,19 @@
 <div id="Categories" class="main-container tabcontent">
     <h1>Categories</h1>
     <div>
-        <div>
+        <div class="probox">
             <p>This week's selection</p>
             <div class="product">
                 <div><img src="products/a30.jpeg" alt=""><div class="p2"><p>Samsung Galaxy A30</p><p>Shs 900000</p></div><button class="cartbtn musi">Add to cart</button></div>
                 <div><img src="products/hp laptop.jpeg" alt=""><div class="p2"><p>HP EliteBook G2</p><p>Shs 1000000</p></div></p><button class="cartbtn musi">Add to cart</button></div>
-                <div><img src="products/dugar.jpeg" alt=""><div class="p2"><p>Kakira Sugar</p><p>Shs 3000</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/sugar.jpeg" alt=""><div class="p2"><p>Kakira Sugar</p><p>Shs 3000</p></div><button class="cartbtn musi">Add to cart</button></div>
                 <div><img src="products/saraya.jpeg" alt=""><div class="p2"><p>Sayara Hand Santizer</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
                 <div><img src="products/lato.jpeg" alt=""><div class="p2"><p>Lato Milk</p><p>Shs 10000</p></div><button class="cartbtn musi">Add to cart</button></div>
                 <div><img src="products/air7.jpeg" alt=""><div class="p2"><p>Ipad Air 7</p><p>Shs 300000</p></div><button class="cartbtn musi">Add to cart</button></div>
-                <div><img src="products/dpark 7.jpeg" alt=""><div class="p2"><p>Tenco Spark 7</p><p>Shs 50000</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/spark 7.jpeg" alt=""><div class="p2"><p>Tenco Spark 7</p><p>Shs 50000</p></div><button class="cartbtn musi">Add to cart</button></div>
             </div>
         </div>
-        <div>
+        <div class="probox">
             <p>Trending items</p>
             <div class="product">
                 <div><img src="products/s7.jpeg" alt=""><div class="p2"><p>Samsung Galaxy S20</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
@@ -134,19 +144,7 @@
                 <div><img src="products/kids2.jpeg" alt=""><div class="p2"><p>Pink Kids Frock</p><p>Shs 45000</p></div><button class="cartbtn musi">Add to cart</button></div>
             </div>
         </div>
-        <div>
-            <p>Fresh goods</p>
-            <div class="product">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-        <div>
+        <div class="probox">
             <p>New products</p>
             <div class="product">
                 <div><img src="products/s7.jpeg" alt=""><div class="p2"><p>Galaxy Tab7</p><p>Shs 3500000</p></div><button class="cartbtn musi">Add to cart</button></div>
@@ -158,11 +156,11 @@
                 <div><img src="products/kids11.webp" alt=""><div class="p2"><p>Summer kids wear</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
             </div>
         </div>
-        <div>
+        <div class="probox">
             <p>Supermarket</p>
             <div class="product">
                 <div><img src="products/lato.jpeg" alt=""><div class="p2"><p>Lato Powdered Milk</p><p>Shs 10000</p></div><button class="cartbtn musi">Add to cart</button></div>
-                <div><img src="products/dugar.jpeg" alt=""><div class="p2"><p>Kakira Sugar</p><p>Shs 3000</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/sugar.jpeg" alt=""><div class="p2"><p>Kakira Sugar</p><p>Shs 3000</p></div><button class="cartbtn musi">Add to cart</button></div>
                 <div><img src="products/saraya.jpeg" alt=""><div class="p2"><p>Sayara Hand Santizer</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
                 <div><img src="products/milk.jpeg" alt=""><div class="p2"><p>Jesa Milk 500ml</p><p>Shs 21200</p></div><button class="cartbtn musi">Add to cart</button></div>
                 <div><img src="products/medical.jpeg" alt=""><div class="p2"><p>Face Mask</p><p>Shs 1000</p></div><button class="cartbtn musi">Add to cart</button></div>
@@ -170,15 +168,15 @@
                 <div><img src="products/omo.jpeg" alt=""><div class="p2"><p>Omo Powder</p><p>Shs 6000</p></div><button class="cartbtn musi">Add to cart</button></div>
             </div>
         </div>
-        <div>
+        <div class="probox">
             <p>Top Products</p>
             <div class="product">
                 <div><img src="products/hp laptop.jpeg" alt=""><div class="p2"><p>HP EliteBook G4</p><p>Shs 3000000</p></div><button class="cartbtn musi">Add to cart</button></div>
                 <div><img src="products/ip11.jpeg" alt=""><div class="p2"><p>Iphone 11</p><p>Shs 5500000</p></div><button class="cartbtn musi">Add to cart</button></div>
-                <div><img src="products/dugar.jpeg" alt=""><div class="p2"><p>Kakira sugar</p><p>Shs 3000</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/sugar.jpeg" alt=""><div class="p2"><p>Kakira sugar</p><p>Shs 3000</p></div><button class="cartbtn musi">Add to cart</button></div>
                 <div><img src="products/medical.jpeg" alt=""><div class="p2"><p>Face mask</p><p>Shs 1000</p></div><button class="cartbtn musi">Add to cart</button></div>
                 <div><img src="products/a30.jpeg" alt=""><div class="p2"><p>Samsung Galaxy A30</p><p>Shs 800000</p></div><button class="cartbtn musi">Add to cart</button></div>
-                <div><img src="products/a3).jpeg" alt=""><div class="p2"><p>Out door shoe</p><p>Shs 110000</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/a3.jpeg" alt=""><div class="p2"><p>Out door shoe</p><p>Shs 110000</p></div><button class="cartbtn musi">Add to cart</button></div>
                 <div><img src="products/flour.jpeg" alt=""><div class="p2"><p>Supreme flour</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
             </div>
         </div>
@@ -188,7 +186,7 @@
 <!--FASHION TAB-->
 <div id="Fashion" class="main-container tabcontent">
     <h1>Fashion</h1>
-    <div>
+    <div class="probox">
         <p>Men's fashion</p>
         <div class="product">
             <div><img src="products/m2.jpeg" alt=""><div class="p2"><p>Polo Shirt</p><p>Shs 25000</p></div><button class="cartbtn musi">Add to cart</button></div>
@@ -199,40 +197,38 @@
             <div><img src="products/a2.jpeg" alt=""><div class="p2"><p>Addias sandels</p><p>Shs 15000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/a6.jpeg" alt=""><div class="p2"><p>Swede brown shoe</p><p>Shs 60000</p></div><button class="cartbtn musi">Add to cart</button></div>
         </div>
-        <p></p>
         <div class="product">
-            <div><img src="products/a3).jpeg" alt=""><div class="p2"><p>Out door shoe</p><p>Shs 110000</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/a3.jpeg" alt=""><div class="p2"><p>Out door shoe</p><p>Shs 110000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/tommy.webp" alt=""><div class="p2"><p>Tommy shirt</p><p>Shs 30000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/shoe1.jpg" alt=""><div class="p2"><p>Brown Oxfords</p><p>Shs 90000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/suit.jpg" alt=""><div class="p2"><p>Grey Suit</p><p>Shs 200000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/sweatpant.jpeg" alt=""><div class="p2"><p>Nike Sweatpant</p><p>Shs 35000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/shoe3.jpg" alt=""><div class="p2"><p>Swede Lofers</p><p>Shs 110000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/jean.jpg" alt=""><div class="p2"><p>Damage Jeans</p><p>Shs 45000</p></div><button class="cartbtn musi">Add to cart</button></div>
         </div>
     </div>
-    <div>
+    <div class="probox">
         <p>Women's fashion</p>
         <div class="product">
-            <div><img src="products/clothe1.jpeg" alt=""><div class="p2"><p>Hobbs lace selena dress</p><p>Shs 30000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/clothe1.jpeg" alt=""><div class="p2"><p>Hobbs lace dress</p><p>Shs 30000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/clothe4.jpeg" alt=""><div class="p2"><p>Green jumpsuit</p><p>Shs 30000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/clthes2.jpeg" alt=""><div class="p2"><p>Red dress</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/shoe 3.webp" alt=""><div class="p2"><p>Dolce & Gabbana</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/shoe1.webp" alt=""><div class="p2"><p>Viola 110 sandels</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/shoe2.webp" alt=""><div class="p2"><p></p><p></p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/shoe2.webp" alt=""><div class="p2"><p>Paolo Rossi heels</p><p>Shs 55000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/shoe5.webp" alt=""><div class="p2"><p>Women's snicker</p><p>Shs 50000</p></div><button class="cartbtn musi">Add to cart</button></div>
         </div>
-        <p></p>
         <div class="product">
             <div><img src="products/blue.jpeg" alt=""><div class="p2"><p>Out door high heels</p><p>Shs 110000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/zara.jpeg" alt=""><div class="p2"><p>Zara heels</p><p>Shs 90000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/a4.jpeg" alt=""><div class="p2"><p>Minnetonka slipper</p><p>Shs 45000</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs </p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs </p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs </p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs </p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/dress4.jpg" alt=""><div class="p2"><p>Yellow Summer dress</p><p>Shs 65000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/bag.jpg" alt=""><div class="p2"><p>Yellow purse</p><p>Shs 25000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/dress3.jpeg" alt=""><div class="p2"><p>Summer blue dress</p><p>Shs 40000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/dress2.jpg" alt=""><div class="p2"><p>Black button dress</p><p>Shs 76000</p></div><button class="cartbtn musi">Add to cart</button></div>
         </div>
     </div>
-    <div>
+    <div class="probox">
         <p>Kids fashion</p>
         <div class="product">
             <div><img src="products/kids1.jpeg" alt=""><div class="p2"><p>Yellow Ywoow dress</p><p>Shs 55000</p></div><button class="cartbtn musi">Add to cart</button></div>
@@ -243,7 +239,6 @@
             <div><img src="products/kids6.webp" alt=""><div class="p2"><p>Kids Roller Shoes</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/kids6.jpg" alt=""><div class="p2"><p>Sneakers FROODO</p><p>Shs 27000</p></div><button class="cartbtn musi">Add to cart</button></div>
         </div>
-        <p></p>
         <div class="product">
             <div><img src="products/kids7.webp" alt=""><div class="p2"><p>Summer clothes</p><p>Shs 25000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/kids8.jpg" alt=""><div class="p2"><p>Bowtie outfit</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
@@ -258,7 +253,7 @@
 <!--BOOKS TAB-->
 <div id="Books" class="main-container tabcontent">
     <h1>Books</h1>
-    <div>
+    <div class="probox">
         <p>Stationary</p>
         <div class="product">
             <div><img src="products/" alt=""><div class="p2"><p>Exercise books</p><p>Shs 6000</p></div><button class="cartbtn musi">Add to cart</button></div>
@@ -269,7 +264,6 @@
             <div><img src="products/" alt=""><div class="p2"><p>Box files</p><p>Shs 2000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
         </div>
-        <p></p>
         <div class="product">
             <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
@@ -280,7 +274,7 @@
             <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
         </div>
     </div>
-    <div>
+    <div class="probox">
         <p>Educational</p>
         <div class="product">
             <div><img src="products/" alt=""><div class="p2"><p>Oxford Dictionary</p><p>Shs 25000</p></div><button class="cartbtn musi">Add to cart</button></div>
@@ -291,7 +285,6 @@
             <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
         </div>
-        <p></p>
         <div class="product">
             <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
@@ -302,7 +295,7 @@
             <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
         </div>
     </div>
-    <div>
+    <div class="probox">
         <p>Novels</p>
         <div class="product">
             <div><img src="products/" alt=""><div class="p2"><p>Wimpy Kid</p><p>Shs 10000</p></div><button class="cartbtn musi">Add to cart</button></div>
@@ -313,7 +306,6 @@
             <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/" alt=""><div class="p2"><p>Withering Heights</p><p>Shs 15000</p></div><button class="cartbtn musi">Add to cart</button></div>
         </div>
-        <p></p>
         <div class="product">
             <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
@@ -324,14 +316,11 @@
             <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
         </div>
     </div>
-    <div>
-
-    </div>
 </div>
 <!--ELECTRONICS TAB-->
 <div id="Electronics" class="main-container tabcontent">
     <h1>Electronics</h1>
-    <div>
+    <div class="probox">
         <p>Smartphones,Tablets and Computers</p>
         <div class="product">
             <div><img src="products/a7.jpeg" alt=""><div class="p2"><p>Galaxy Tab7</p><p>Shs 5200000</p></div><button class="cartbtn musi">Add to cart</button></div>
@@ -342,59 +331,56 @@
             <div><img src="products/ip12.jpeg" alt=""><div class="p2"><p>Iphone 12</p><p>Shs 6000000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/ip7.jpeg" alt=""><div class="p2"><p>Iphone 7</p><p>Shs 1500000</p></div><button class="cartbtn musi">Add to cart</button></div>
         </div>
-        <p></p>
         <div class="product">
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/samsungwatch.webp" alt=""><div class="p2"><p>Samsung Smartwatch</p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/hp laptop.jpeg" alt=""><div class="p2"><p>HP Elitebook G4</p><p>Shs 3000000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/camon 17.jpeg" alt=""><div class="p2"><p>Tenco Camon 17</p><p>Shs 900000</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/dpark 7.jpeg" alt=""><div class="p2"><p>Tenco Spark 7</p><p>Shs 500000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/spark 7.jpeg" alt=""><div class="p2"><p>Tenco Spark 7</p><p>Shs 500000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/nokia.jpeg" alt=""><div class="p2"><p> Nokia 102 </p><p>Shs 320000</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/applewatch2.jpg" alt=""><div class="p2"><p>Apple Smartwatch</p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/smart 5.jpeg" alt=""><div class="p2"><p>Infinix Smart 5</p><p>Shs 480000</p></div><button class="cartbtn musi">Add to cart</button></div>
         </div>
     </div>
-    <div>
-        <p>Home accesories</p>
+    <div class="probox">
+        <p>Kitchen & Laundry</p>
         <div class="product">
+            <div><img src="products/dishwasher.webp" alt=""><div class="p2"><p>Dish Washer</p><p>Shs 4200000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/blender1.jpg" alt=""><div class="p2"><p>Kitchen blender</p><p>Shs 280000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/handmixer.png" alt=""><div class="p2"><p>Hand mixer</p><p>Shs 200000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/Fridge.png" alt=""><div class="p2"><p>Double door Frige</p><p>Shs 3200000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/kettle.png" alt=""><div class="p2"><p>Electric kettle</p><p>Shs 23900</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/processor.png" alt=""><div class="p2"><p>Food processor</p><p> 350000</p></div><button class="cartbtn musi">Add to cart</button></div>
         </div>
-        <p></p>
         <div class="product">
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/oven.png" alt=""><div class="p2"><p>Electric Oven</p><p>Shs 510000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/stand_mixer.png" alt=""><div class="p2"><p>Stand mixer</p><p>Shs 45000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/cooker.png" alt=""><div class="p2"><p>Gas Cooker</p><p>Shs 89000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/flat_iron.png" alt=""><div class="p2"><p>Flat iron</p><p>Shs 40000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/washing.png" alt=""><div class="p2"><p>Washing Machince</p><p>Shs 1200000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/blender2.webp" alt=""><div class="p2"><p>Kitchen blender</p><p>Shs 150000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/microwave.jpg" alt=""><div class="p2"><p>Microwave</p><p>Shs 700000</p></div><button class="cartbtn musi">Add to cart</button></div>
         </div>
     </div>
-    <div>
-        <p>Toys</p>
+    <div class="probox">
+        <p>Home accesories</p>
         <div class="product">
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/fan.png" alt=""><div class="p2"><p>Electric Fan</p><p>Shs 80000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/LG.jpg" alt=""><div class="p2"><p>43inch Smart LG TV</p><p>Shs 5700000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/wired_speaker.png" alt=""><div class="p2"><p>Wired Speakers</p><p>Shs 75000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/beats.png" alt=""><div class="p2"><p>Wireless Headphones</p><p>Shs 220000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/dvd.png" alt=""><div class="p2"><p>DVD player</p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/hometheatre.png" alt=""><div class="p2"><p>Home Theater</p><p>Shs 1700000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/wired_earphones.png" alt=""><div class="p2"><p>Wired Earphones</p><p>Shs 2000</p></div><button class="cartbtn musi">Add to cart</button></div>
         </div>
-        <p></p>
         <div class="product">
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/" alt=""><div class="p2"><p></p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/wireless_speaker.png" alt=""><div class="p2"><p>Wireless Speaker</p><p>Shs 110000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/samsung.png" alt=""><div class="p2"><p>72inch Samsung_TV</p><p>Shs 7200000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/wirebeats.png" alt=""><div class="p2"><p>Wired Headphones</p><p>Shs 8000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/vacuum_cleaner.png" alt=""><div class="p2"><p>Vacuum Cleaner</p><p>Shs 300000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/mifi.png" alt=""><div class="p2"><p>Mifi router</p><p>Shs 50000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/wireless_earphone.png" alt=""><div class="p2"><p>Wireless Earphones</p><p>Shs 50000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/cameras.png" alt=""><div class="p2"><p>Security Cameras</p><p>Shs 300000</p></div><button class="cartbtn musi">Add to cart</button></div>
         </div>
     </div>
 </div>
