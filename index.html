@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" style=" background-color: rgba(152, 179, 180, 0.815);">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/informal-roman">
     <link rel="stylesheet" href="project.css">
-    <script src="jQuery.js"></script>
+    <link rel="icon" href="images/logo2.jpg">
+    <script src="java.js"></script>
     <script>
         $(document).ready(function(){
-    
+            $("body").click(function(){    
                 var count = $("#cartdiv").find(".cartbox").length;
                 $("#cartn").text(+ count);
-                    
+                $("#item_no").text(+ count);
+             });
         });
+        
     </script>
     
     <title>ProMart</title>
@@ -22,14 +26,14 @@
 <header>
     <div class="nav-top">
         <div>
-           <a  style="color: gold;" href="index.html">ProMart</a> 
+           <a class="logo" href="index.html">ProMart</a> 
         </div>
         <div style="display: flex;">
             <div class="nav-box">
                 <input type="text" class="search" name="search" placeholder="Search..">
             </div>
             <div class="nav-box" onclick="openSide('cartpage')">
-                <img src="images/cart.png" alt="cart"><small id="cartn"></small>
+                <img src="images/cart.png" alt="cart">
             </div>
             <div class="nav-box drop" onclick="dropbar()">
                 <img id="account" src="images/user.png" alt="user">
@@ -48,9 +52,7 @@
             <button class="tablinks" onclick="openTab(event,'Categories')">Categories</button>
             <button class="tablinks" onclick="openTab(event,'Fashion')">Fashion</button>
             <button class="tablinks" onclick="openTab(event,'Electronics')">Electronics</button>   
-        </div>
-        <div>
-            <button class="tablinks" onclick="openTab(event,'Sell_Items')">Sell Items</button>
+            <button style="float: right;" class="tablinks" onclick="openTab(event,'Sell_Items')">Sell Items</button>
         </div>
     </div>
 </header>
@@ -58,14 +60,26 @@
 <div id="sidebar" class="sidebar">
     <p href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</p>
     <a onclick="openSide('Categories')">Categories</a>
+    <hr width="200px">
     <ul>
         <li>Trending</li>
         <li>This week's selection</li>
         <li>Top deals</li>
     </ul>
     <a onclick="openSide('Fashion')">Fashion</a>
-    <a href="#">Books</a>
+    <hr width="200px">
+    <ul>
+        <li>Men's Fashion</li>
+        <li>Women's Fashion</li>
+        <li>Kids wear</li>
+    </ul>
     <a href="#">Electronics</a>
+    <hr width="200px">
+    <ul>
+        <li>Smartphones and Tablets</li>
+        <li>Home Accesories</li>
+        <li>Kitchen & Laundry</li>
+    </ul>
 </div>
 <!--HOME TAB-->
 <div class="tabcontent" id="Home">
@@ -78,10 +92,10 @@
             <div class="square" style="background-image: url();"><img src="images/black-friday.jpg" alt=""></div>
         </div>
         <div class="mySlides fade">
-            <div class="square" style="background-image: url();">3</div>
+            <div class="square" style="background-image: url();"><img src="images/school.jpeg" alt=""></div>
         </div>
         <div class="mySlides fade">
-            <div class="square" style="background-image: url();">4</div>
+            <div class="square" style="background-image: url();"><img src="images/all-fashion.jpg" alt=""></div>
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -103,7 +117,7 @@
         <div class="circle"><p>Available products</p></div>
         <div class="circle"><p>Supermarket</p></div>
         <div class="circle"><p>Fresh products</p></div>
-        <div class="circle"><p></p></div>
+        <div class="circle"><p>New products</p></div>
     </div>
     <div class="row">
         <div><div class="square" style="background-image: url(images/images2.jpeg);"></div><p>Outdoor Accesories</p></div>
@@ -113,7 +127,7 @@
     <div class="row">
         <div><div class="square" style="background-image: url(images/sumer-clothes-for-kids.jpg);"></div><p>Kids wear</p></div>
         <div><div class="square" style="background-image: url(images/black-friday2.jpg);"></div><p>Black Friday</p></div>
-        <div><div class="square" style="background-image: url();"></div><p>Back to school</p></div>
+        <div><div class="square" style="background-image: url(images/image3.jpeg);"></div><p>Back to school</p></div>
     </div>
 </div>
 <!--CATEGORIES TAB--> 
@@ -123,9 +137,9 @@
         <div class="probox">
             <p>This week's selection</p>
             <div class="product">
-                <div><img src="products/a30.jpeg" alt=""><div class="p2"><p>Samsung Galaxy A30</p><p>Shs 900000</p></div><button class="cartbtn musi">Add to cart</button></div>
-                <div><img src="products/hp laptop.jpeg" alt=""><div class="p2"><p>HP EliteBook G2</p><p>Shs 1000000</p></div></p><button class="cartbtn musi">Add to cart</button></div>
-                <div><img src="products/sugar.jpeg" alt=""><div class="p2"><p>Kakira Sugar</p><p>Shs 3000</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/a30.jpeg" alt="" onclick="openSide2('a30')"><div class="p2"><p>Samsung Galaxy A30</p><p>Shs 900000</p></div><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/hp laptop.jpeg" alt="" onclick="openSide2('hp-laptop')"><div class="p2"><p>HP EliteBook G2</p><p>Shs 1000000</p></div></p><button class="cartbtn musi">Add to cart</button></div>
+                <div><img src="products/sugar.jpeg" alt="" onclick="openSide2('sugar')"><div class="p2"><p>Kakira Sugar</p><p>Shs 3000</p></div><button class="cartbtn musi">Add to cart</button></div>
                 <div><img src="products/saraya.jpeg" alt=""><div class="p2"><p>Sayara Hand Santizer</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
                 <div><img src="products/lato.jpeg" alt=""><div class="p2"><p>Lato Milk</p><p>Shs 10000</p></div><button class="cartbtn musi">Add to cart</button></div>
                 <div><img src="products/air7.jpeg" alt=""><div class="p2"><p>Ipad Air 7</p><p>Shs 300000</p></div><button class="cartbtn musi">Add to cart</button></div>
@@ -189,9 +203,9 @@
     <div class="probox">
         <p>Men's fashion</p>
         <div class="product">
-            <div><img src="products/m2.jpeg" alt=""><div class="p2"><p>Polo Shirt</p><p>Shs 25000</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/m3.jpeg" alt=""><div class="p2"><p>Short Slive</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/m4.jpeg" alt=""><div class="p2"><p>Black T-shirt</p><p>Shs 26000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/m2.jpeg" alt="" onclick="openSide2('m2')"><div class="p2"><p>Polo Shirt</p><p>Shs 25000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/m3.jpeg" alt="" onclick="openSide2('m3')"><div class="p2"><p>Short Slive</p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/m4.jpeg" alt="" onclick="openSide2('m4')"><div class="p2"><p>Black T-shirt</p><p>Shs 26000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/m6.jpeg" alt=""><div class="p2"><p></p><p>Shs 20000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/a1.jpeg" alt=""><div class="p2"><p>Ankle boots leather</p><p>Shs 70000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/a2.jpeg" alt=""><div class="p2"><p>Addias sandels</p><p>Shs 15000</p></div><button class="cartbtn musi">Add to cart</button></div>
@@ -323,9 +337,9 @@
     <div class="probox">
         <p>Smartphones,Tablets and Computers</p>
         <div class="product">
-            <div><img src="products/a7.jpeg" alt=""><div class="p2"><p>Galaxy Tab7</p><p>Shs 5200000</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/air7.jpeg" alt=""><div class="p2"><p>Ipad Air7</p><p>Shs 4300000</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/a12.jpeg" alt=""><div class="p2"><p>Samsung Galaxy A12</p><p>Shs 700000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/a7.jpeg" alt="" onclick="openSide2('a7')"><div class="p2"><p>Galaxy Tab7</p><p>Shs 5200000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/air7.jpeg" alt="" onclick="openSide2('air7')"><div class="p2"><p>Ipad Air7</p><p>Shs 4300000</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/a12.jpeg" alt="" onclick="openSide2('a12')"><div class="p2"><p>Samsung Galaxy A12</p><p>Shs 700000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/a30.jpeg" alt=""><div class="p2"><p>Samsung Galaxy A30</p><p>Shs 800000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/ip11.jpeg" alt=""><div class="p2"><p>Iphone 11</p><p>Shs 5500000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/ip12.jpeg" alt=""><div class="p2"><p>Iphone 12</p><p>Shs 6000000</p></div><button class="cartbtn musi">Add to cart</button></div>
@@ -369,7 +383,7 @@
             <div><img src="products/LG.jpg" alt=""><div class="p2"><p>43inch Smart LG TV</p><p>Shs 5700000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/wired_speaker.png" alt=""><div class="p2"><p>Wired Speakers</p><p>Shs 75000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/beats.png" alt=""><div class="p2"><p>Wireless Headphones</p><p>Shs 220000</p></div><button class="cartbtn musi">Add to cart</button></div>
-            <div><img src="products/dvd.png" alt=""><div class="p2"><p>DVD player</p><p>Shs</p></div><button class="cartbtn musi">Add to cart</button></div>
+            <div><img src="products/dvd2.jpg" alt=""><div class="p2"><p>DVD player</p><p>Shs 36000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/hometheatre.png" alt=""><div class="p2"><p>Home Theater</p><p>Shs 1700000</p></div><button class="cartbtn musi">Add to cart</button></div>
             <div><img src="products/wired_earphones.png" alt=""><div class="p2"><p>Wired Earphones</p><p>Shs 2000</p></div><button class="cartbtn musi">Add to cart</button></div>
         </div>
@@ -386,14 +400,64 @@
 </div>
 <!--CART-->
 <div id="cartpage" class="main-container tabcontent">
-    <h1>Cart</h1>
+    <h1>Cart: (<small id="cartn"></small> items)</h1>
     <div id="cartdiv">
         <div id="text">No items in cart</div>
     </div> 
-    <div id="orderbtn">
-        <button type="submit">
-            Order
+    <div class="orderbtn">
+        <button onclick="openCart()" id="musiCart">
+            Order Items
         </button>
+    </div>
+    <!--overlay cart-->
+    <div id="myCart" class="overlay" >
+        <div class="content">
+            <h1>You have purchased <label id="item_no" style="font: inherit;"></label> items</h1>
+            <div>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeCart()">&times;</a>
+            </div>
+            <ul>
+                <div>
+                    <h2>Mode of Payment</h2>
+                    <div>
+                        <div>
+                            <input type="radio" name="cart" id="mobile_money"><label>Mobile Money</label>
+                            <div id="mobile_money2">
+                                <img src="images/MTN.jpg" alt="mtn">
+                                <img src="images/airtel.jpg" alt="">
+                            </div>
+                        </div>
+                        <div>
+                            <input type="radio" name="cart" id="credit_card"><label>Credit Card</label>
+                            <div style="margin:10px;" id="credit_card2">
+                                <label>Credit Number:</label><br>
+                                <input type="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>Location</h2>
+                    <div>
+                        <div>
+                            <input type="radio" name="cart2" id="usual_location"><label>Usual location</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="cart2" id="location"><label>New location</label>
+                            <div  style="margin:10px;" id="location2">
+                                <label>Address number:</label><br>
+                                <input type="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button>
+                        Order
+                    </button>
+                </div>
+            </ul>
+        </div>
     </div>
 </div>
 <!--SELL TAB-->
@@ -413,17 +477,318 @@
             <input type="file">
         </div>
         <div>
-            <button type="submit">Submit</button>
+            <a href="index.html"><button onclick="alert('Product submitted')" type="submit">Submit</button></a>
         </div>
     </div>
 </div> 
+<!--EXTRA CONTENT-->
+<div id="a30" class="main-container tabcontent moreinfo">
+    <div>
+        <img src="products/a30.jpeg" alt="">
+        <h3>Samsung Galaxy A30</h3>
+        <h3>Shs 900000</h3>
+        <button>Add to cart</button>
+        <button>Order Now</button>
+    </div>
+    <div>
+        <h2>Short description</h2>
+        <div>
+            <table>
+                <tr>
+                    <td>Dimensions:</td>
+                    <td>6.6&times;3.3&times;2.1inches</td>
+                </tr>
+                <tr>
+                    <td>Weight:</td>
+                    <td>12 ouches</td>
+                </tr>
+                <tr>
+                    <td>OS:</td>
+                    <td>Android 9(Pie)</td>
+                </tr>
+                <tr>
+                    <td>Internal Storage:</td>
+                    <td>64GB</td>
+                </tr>
+                <tr>
+                    <td>RAM:</td>
+                    <td>4GB</td>
+                </tr>
+                <tr>
+                    <td>Processor:</td>
+                    <td>Exynos 7604 Octa(14nm)</td>
+                </tr>
+                <tr>
+                    <td>Date released:</td>
+                    <td>November 2,2016</td>
+                </tr>
+                <tr>
+                    <td>Manufacter:</td>
+                    <td>Samsung</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="hp-laptop" class="main-container tabcontent moreinfo">
+    <div>
+        <img src="products/hp laptop.jpeg" alt="">
+        <h3>HP EliteBook G2</h3>
+        <h3>Shs 1000000<h3>
+        <button>Add to cart</button>
+        <button>Order Now</button>
+    </div>
+    <div>
+        <h2>Short description</h2>
+        <table>
+            <tr>
+                <td>Brand:</td>
+                <td>HP</td>
+            </tr>
+            <tr>
+                <td>OS:</td>
+                <td>Windows 10pro</td>
+            </tr>
+            <tr>
+                <td>RAM:</td>
+                <td>8GB</td>
+            </tr>
+            <tr>
+                <td>Hard Drive:</td>
+                <td>256GB</td>
+            </tr>
+            <tr>
+                <td>Processor Brand:&nbsp;</td>
+                <td>Intel</td>
+            </tr>
+            <tr>
+                <td>Manufacturer:</td>
+                <td>2.5 GHz</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="a7" class="main-container tabcontent moreinfo">
+    <div>
+        <img src="products/a7.jpeg" alt="">
+        <h3>Samsung Tab 7</h3>
+        <h3>Shs 5200000</h3>
+        <button>Add to cart</button><button>Order now</button>
+    </div>
+    <div>
+        <h2>Short description</h2>
+        <table>
+            <tr>
+                <td>Dimensions</td>
+                <td>0.25&times;6.51&times;9.99 inches</td>
+            </tr>
+            <tr>
+                <td>Internal Storage</td>
+                <td>256GB</td>
+            </tr>
+            <tr>
+                <td>RAM</td>
+                <td>8GB</td>
+            </tr>
+            <tr>
+                <td>OS</td>
+                <td>Android 10 pie</td>
+            </tr>
+            <tr>
+                <td>Weight</td>
+                <td>1 pound</td>
+            </tr>
+            <tr>
+                <td>Date released</td>
+                <td>1 September, 2020</td>
+            </tr>
+            <tr>
+                <td>Manufacturer</td>
+                <td>Samsung</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="air7" class="main-container tabcontent moreinfo">
+    <div>
+        <img src="products/air7.jpeg" alt="">
+        <h3>Ipad Air 7</h3>
+        <h3>Shs 4300000</h3>
+        <button>Add to cart</button>
+        <button>Order now</button>
+    </div>
+    <div>
+        <h2>Short description</h2>
+        <table>
+            <tr>
+                <td>Dimesions</td>
+                <td>9.74&times;7&times;0.24 inches</td>
+            </tr>
+            <tr>
+                <td>Internal Storage</td>
+                <td>256GB</td>
+            </tr>
+            <tr>
+                <td>RAM</td>
+                <td>8GB</td>
+            </tr>
+            <tr>
+                <td>OS</td>
+                <td>IPadOS</td>
+            </tr>
+            <tr>
+                <td>Date released</td>
+                <td>September 15,2020</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="a12" class="main-container tabcontent moreinfo">
+    <div>
+        <img src="products/a12.jpeg" alt="">
+        <h3>Samsung Galaxy A12</h3>
+        <h3>Shs 700000</h3>
+        <button>Add to cart</button>
+        <button>Order now</button>
+    </div>
+    <div>
+        <h2>Short description</h2>
+        <table>
+            <tr>
+                <td>Dimensions</td>
+                <td>0.35&times;6.46&times;2.98inches</td>
+            </tr>
+            <tr>
+                <td>Internal Storage</td>
+                <td>32GB</td>
+            </tr>
+            <tr>
+                <td>RAM</td>
+                <td>4GB</td>
+            </tr>
+            <tr>
+                <td>OS</td>
+                <td>Android 10.0</td>
+            </tr>
+            <tr>
+                <td>Weight</td>
+                <td>7.2 ouches</td>
+            </tr>
+            <tr>
+                <td>Date released</td>
+                <td>April 30,2021</td>
+            </tr>
+            <tr>
+                <td>Manufacturer</td>
+                <td>Samsung</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="sugar" class="main-container tabcontent moreinfo">
+    <div>
+        <img src="products/sugar.jpeg" alt="">
+        <h3>Kakira Sugar</h3>
+        <h3>Shs 3000</h3>
+        <button>Add to cart</button>
+        <button>Order now</button>
+    </div>
+    <div>
+        <h2>Short description</h2>
+        <p>None...</p>
+        <table></table>
+    </div>
+</div>
+<div id="saraya" class="main-container tabcontent moreinfo">
+    <div>
+        <img src="products/saraya.jpeg" alt="">
+        <h3>Sayara Hand Santizer</h3>
+        <h3>Shs 20000</h3>
+        <button>Add to cart</button>
+        <button>Order now</button>
+    </div>
+    <div>
+        <h2>Short description</h2>
+        <p>None...</p>
+        <table></table>
+    </div>
+</div>
+<div id="m2" class="main-container tabcontent moreinfo">
+    <div>
+        <img src="products/m2.jpeg" alt="">
+        <h3>Polo Shirt</h3>
+        <h3>Shs 25000</h3>
+        <p>Size
+        <input type="radio" name="color" id=""><label for="">Extra large</label>
+        <input type="radio" name="color" id=""><label for="">Large</label>
+        <input type="radio" name="color" id=""><label for="">Medium</label>
+        <input type="radio" name="color" id=""><label for="">Small</label>
+        </p><br><button>Add to cart</button>
+        <button>Order now</button>
+    </div>
+    <div>
+        <h2>Short description</h2>
+        <table>
+            <tr>
+                <td>Made in:</td>
+                <td>Italy</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="m3" class="main-container tabcontent moreinfo">
+    <div>
+        <img src="products/m3.jpeg" alt="">
+        <h3>Short Sleve Shirt</h3>
+        <h3>Shs 20000</h3>
+        <p>Size:
+        <input type="radio" name="color2" id=""><label for="">Extra large</label>
+        <input type="radio" name="color2" id=""><label for="">Large</label>
+        <input type="radio" name="color2" id=""><label for="">Medium</label>
+        <input type="radio" name="color2" id=""><label for="">Small</label>
+        </p><button>Add to cart</button>
+        <button>Order now</button>
+    </div>
+    <div>
+        <h2>Short description</h2>
+        <table>
+            <tr>
+                <td>Made in:</td>
+                <td>China</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="m4" class="main-container tabcontent moreinfo">
+    <div>
+        <img src="products/m4.jpeg" alt="">
+        <h3>Black T-shirt</h3>
+        <h3>Shs 26000</h3>
+        <p>Size:
+        <input type="radio" name="color3" id=""><label for="">Extra large</label>
+        <input type="radio" name="color3" id=""><label for="">Large</label>
+        <input type="radio" name="color3" id=""><label for="">Medium</label>
+        <input type="radio" name="color3" id=""><label for="">Small</label>
+        </p><button>Add to cart</button>
+        <button>Order now</button>
+    </div>
+    <div>
+        <h2>Short description</h2>
+        <table>
+            <tr>
+                <td>Made in:</td>
+                <td>China</td>
+            </tr>
+        </table>
+    </div>
+</div>
 </body>
 <!--FOOTER-->
 <footer>
     <div class="footer">
-        <a href="">HELP CENTER</a>
-        <a href="">CONTACT US</a>
-        <a href=""> ABOUT US</a>
+        <a href="#">PRIVACY POLICY</a>
+        <a href="contact us.html">CONTACT US</a>
+        <a href="about us.html"> ABOUT US</a>
     </div>
     <div class="line"></div>
     <div class="footer">
@@ -431,4 +796,5 @@
     </div>
 </footer>
 <script src="project.js"></script>
+<script src="other.js"></script>
 </html>

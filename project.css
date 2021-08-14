@@ -9,6 +9,7 @@ html{
 .slide-container{
     max-width: 1000px;
     position: relative;
+    overflow: hidden;
     margin: auto;
 }
 .mySlides, .mySign{
@@ -53,6 +54,8 @@ html{
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
     animation-duration: 1.5s;
+    -webkit-transition: linear;
+    transition: linear;
 }
 @-webkit-keyframes fade{
     from{opacity: 0.4}
@@ -76,7 +79,7 @@ html{
     background-color: #717171;
 }
 .text{
-    font-size: 50px;
+    font-size: 30px;
 }
 /*LOGIN-IN HTML*/
 .body1{
@@ -165,6 +168,11 @@ html{
     justify-content: space-between;
     align-items: center;
 }
+.nav-top .logo, .logo{
+    color: rgb(255, 217, 0);
+    font-size: 40px;
+    font-family:'Informal Roman',Arial, Helvetica, sans-serif;
+}
 .nav-top img{
     width: 30px;
     height: 30px;
@@ -172,6 +180,7 @@ html{
 }
 .nav-top img:hover{
     background-color: #ddd;
+    border-radius: 20px;
 }
 .nav-top a,.nav-box{
     text-align: center;
@@ -184,8 +193,6 @@ html{
     position: fixed;
     z-index: 1;
     top:40px;
-    display: flex;
-    justify-content: space-between;
 }
 @media screen and (max-width:560px) {
     .firstnav{
@@ -193,7 +200,6 @@ html{
         overflow: auto;
         white-space: nowrap;
     }
-    
 }
 @media screen and (max-width:360px) {
     .nav-box{
@@ -225,6 +231,7 @@ html{
 }
 .imgactive{
     background-color: #ccc;
+    border-radius: 20px;
 }
 /*menu icon*/
 .menubar{
@@ -240,7 +247,6 @@ html{
     margin-top: 6px;
     transition: 0.4s;
 }
-
 .change .bar1{
     transform: rotate(-45deg) translate(-9px,6px);
     -webkit-transform: rotate(-45deg) translate(-9px,6px);
@@ -352,18 +358,31 @@ html{
 }
 @media screen and (max-width:1350px) {
     .product div{
-        width: 100px;
+        width: 150px;
         height: 150px;
     }
     .product p{
-        font-size: 10px;
+        font-size: 13px;
+    }
+    .product button{
+        font-size: 13px;
+        width: 80px;
+    }
+}
+@media screen and (max-width:1100px) {
+    .product div{
+        width: 130px;
+        height: 130px;
+    }
+    .product p{
+        font-size: 11px;
     }
     .product button{
         font-size: 10px;
-        width: 50px;
+        width: 70px;
     }
 }
-@media screen and (max-width:760px) {
+@media screen and (max-width:1000px) {
     h1{
         font-size: inherit;
     }
@@ -407,7 +426,7 @@ html{
     }
 }
 .circle{
-    background-color: red;
+    background-color: rgba(255, 255, 255, 0.733);
     width: 100px;
     height: 100px;
     padding:10px;
@@ -423,6 +442,7 @@ html{
     text-align: center;
     font-size: 12px;
     font-weight: 900;
+    color: rgba(255, 0, 0, 0.883);
     
 }
 .row{
@@ -449,8 +469,7 @@ footer{
     text-align: center;
 }
 .footer a:hover{
-    text-decoration: underline;
-    color: darkblue;
+    color: rgba(0, 0, 0, 0.52);
 }
 .line{
     background-color: black;
@@ -485,6 +504,25 @@ footer{
         font-size: 5px;
     }
 }
+/*more info*/
+.moreinfo{
+    height: 100%;
+    width: 100%;
+}
+.moreinfo div{
+    width: 50%;
+    margin: 0%;
+}
+.moreinfo button{
+    width: 150px;
+    height: 40px;
+}
+.moreinfo img{
+    margin: auto;
+}
+.moreinfo table{
+    text-align: left;
+}
 /*Search box*/
 .search{
     height: 20px;
@@ -511,11 +549,6 @@ footer{
         width:150px !important;
     }   
 }
-@media screen and (max-width:424px) {
-    .search:focus{
-        margin-top :12px;
-    }
-}
 /*CART*/
 .nav-top small{
     position: relative;
@@ -540,7 +573,7 @@ footer{
     width: 50%;
 }
 
-#orderbtn button{
+.orderbtn button{
     margin-top: 10px;
     width: 50%;
     height: 30px;
@@ -548,8 +581,8 @@ footer{
     border-radius: 5px;
     font-weight: 600;
 }
-#orderbtn button:hover{
-    background-color: darkgray;
+.orderbtn button:hover{
+    background-color: rgb(169, 169, 169);
 }
 .cartbox{
 
@@ -561,6 +594,126 @@ footer{
     border: 2px solid grey;
     border-radius: 5px;
     margin-bottom: 10px;
+}
+/*Cart_Overlay*/
+.overlay{
+    height: 100%;
+    width:100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left:0;
+    top: 40px;
+    backdrop-filter: blur(10px);
+    transition: 0.5s;
+}
+#mobile_money2, #credit_card2, #location2{
+    display: none;
+}
+.overlay button{
+    margin-top: 10px;
+    background-color: rgb(169, 169, 169);
+    width: 50%;
+    height: 30px;
+    border: 1px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.overlay button:hover{
+    background-color: rgb(117, 117, 117);
+}
+.overlay .content{
+    position: relative;
+    top: 5%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 1px black;
+    width: 500px;
+    height: auto;
+    margin:auto;
+    animation: faze_in 1s ease-out;
+    -webkit-animation: faze_in 1s ease-out;
+}
+@keyframes faze_in {
+    from {
+        width: 490px;
+        height: 450px;
+        opacity: 0;
+    }
+    to{
+        width: 500px;
+        height: auto;
+        opacity: 1;
+    }
+}
+@-webkit-keyframes faze_in {
+    from {
+        width: 490px;
+        height: 450px;
+        opacity: 0;
+    }
+    to{
+        width: 500px;
+        height: auto;
+        opacity: 1;
+    }
+}
+
+.overlay a{
+    padding: 8px;
+    text-decoration: none;
+    font-size: 30px;
+    color:rgb(129, 129, 129);
+    display: block;
+    transition: 0.3s;
+}
+.overlay label{
+    font-size: 20px;
+}
+.overlay input[type=text]{
+    height: 30px;
+    outline: none;
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 3px;
+}
+.overlay img{
+    width: 70px;
+    padding: 10px;
+    margin: 5px 0px 5px 0px;
+    border: 1px solid rgb(128, 128, 128);
+}
+.overlay img:hover , .overlay .active{
+    background-color: rgb(128, 128, 128);
+}
+.overlay input[type=radio]{
+    height: 18px;
+    width: 18px;
+}
+.overlay a:hover, .overlay a:focus{
+    color:rgb(0, 0, 0);
+}
+.overlay .closebtn{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 30px;
+}
+@media screen and (max-width:800px) {
+    .overlay .content{
+        width: 90%;
+        margin: 20px;
+    }    
+}
+@media screen and (max-height:450px) {
+    .overlay a{
+        font-size: 20px;
+    }
+    .overlay .closebtn{
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
 }
 /*sell*/
 .sellpage{
@@ -619,4 +772,131 @@ footer{
     padding: 6px 12px;
     border:1px solid #ccc;
     border-top:none;
+}
+/*CONTACT PAGE*/
+.about-container,.contact-container{
+    margin-top: 40px;
+}
+.contact-container .box{
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to right, rgba(128, 128, 128, 0.301), rgb(85, 85, 85));
+}
+.contact-logo img{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.social_links img{
+    width: 50px;
+}
+.contact-container .contact-logo{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image:
+    linear-gradient(to left, rgba(128, 128, 128, 0.301), rgb(128, 128, 128)),
+    url(images/promart\ \(2\).jpg);
+}
+@media screen and (max-width:700px) {
+    .contact-container .contact-logo{
+        background-image:
+        linear-gradient(to bottom, rgba(128, 128, 128, 0.301), rgb(87, 87, 87)),
+        url(images/about-promart.jpg);
+        background-size: cover;
+        background-position:bottom;
+        width: 100% !important; 
+        height: 170px;
+    }
+    .contact-container .box{
+        flex-direction: column;
+        margin: 0;
+        height: auto;
+        width: 100%;
+        font-size: 20px;
+        background: linear-gradient(to top, rgba(152, 179, 180, 0), rgb(51, 51, 51));        
+    } 
+    .contact-logo img{
+        width: 100%;
+        height: auto;
+        opacity: 0;
+    }
+    .comments .chat_box{
+        width: 90% !important;
+    }   
+}
+.comments{
+    padding: 10px;
+}
+.comments input{
+    border-radius: 5px;
+    margin: 0px 5px 10px 0px;
+    border: 2px solid rgb(128, 128, 128);
+    min-height: 30px;
+}
+.comments button{
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 128, 0);
+    border-radius: 5px;
+    border: 2px solid rgb(0, 128, 0);
+    min-height: 30px;
+    min-width: 30px;
+}
+.comments .chat_box{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 25%;
+    min-height: 50px;
+    margin-bottom: 2px;
+    border: 1px solid grey;
+    padding: 10px;
+    background: whitesmoke;
+    border-radius: 5px;
+}
+.comments .chat_container, .chat_area{
+    margin-bottom: 30px;    
+}
+.chat_container small{
+    margin-left: 5px;
+}
+/*ABOUT US*/
+.aboutimg div{
+    background-image:
+    linear-gradient(to bottom, rgba(128, 128, 128, 0.301), rgb(128, 128, 128)),
+    url(images/about-promart.jpg);
+    background-size: cover;
+    background-position:bottom;
+    width: 100%; 
+    height: 170px;
+}
+.aboutimg p{
+    margin: 0;
+    height: 100px;
+    width: 100%;
+    font-size: 30px;
+    background: linear-gradient(to top, rgba(152, 179, 180, 0), rgb(128, 128, 128));
+}
+.about-container{
+    text-align: center;
+}
+.about-container > p{
+    color: rgb(236, 236, 3);
+    font-size: 25px;
+    font-weight: 900;
+}
+.about-container .content{
+    display: flex;
+    justify-content: space-evenly;
+}
+.about-container .bottom{
+    margin: 20px;
+    padding: 20px;
+    border-top: 1px solid grey;
+}
+@media screen and (max-width:600px) {
+    .about-container .content{
+        display: block;
+    }    
 }

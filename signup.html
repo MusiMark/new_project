@@ -11,14 +11,14 @@
     <header>
         <div class="nav-top">
             <div>
-               <a  style="color: gold;" href="index.html">ProMart</a> 
+               <a class="logo" href="index.html">ProMart</a> 
             </div>
             <div style="display: flex;">
                 <div class="nav-box">
                     <input type="text" class="search" name="search" placeholder="Search..">
                 </div>
                 <div class="nav-box" onclick="openSide('cartpage')">
-                    <img src="images/cart.png" alt="cart"><small id="cartno">0</small>
+                    <img src="images/cart.png" alt="cart">
                 </div>
                 <div class="nav-box drop" onclick="dropbar()">
                     <img id="account" src="images/user.png" alt="user">
@@ -114,10 +114,11 @@
         <div class="mySlides fade">
             <div class="mother">
                 <div style="text-align: center;">
-                    <label style="font-size: 50px;" class="autofill"></label><label style="font-size: 50px;">! Here is your account.</label>
-                    <p>Would you like to add personal information! or just skip and confirm</p>
+                    <div style="font-size: 100px;" class="logo">ProMart</div>
+                    <label style="font-size: 30px;">! Here is your account.</label>
                 </div>
                 <div class="container">
+                    <p>Would you like to add personal information! or just skip and confirm</p>
                     <div>
                         <label for="hobbies">Hobbies</label>
                         <input type="text" name="hobbies">
@@ -129,7 +130,7 @@
                 </div>
                 <div>
                     <button onclick="plusSlides(-1)">Previous</button>
-                    <a href="homepage.html"><button type="submit"  >Confirm</button></a>
+                    <a href="index.html"><button type="submit"  >Confirm</button></a>
                 </div>
             </div>
 

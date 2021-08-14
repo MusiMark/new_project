@@ -1,34 +1,34 @@
-//slides
-var slideIndex = 1;
-showSlides(slideIndex);
+var slideIndex = 0;
+showSlides();
 
-function plusSlides(n) {
-    showSlides(slideIndex += n);    
-}
-function currentSlide(n) {
-    showSlides(slideIndex = n);    
-}
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName('mySlides');
-    var dots = document.getElementsByClassName('dot');
-    if(n > slides.length){
-        slideIndex = 1
-    } 
-    if (n < 1) {
-        slideIndex = slides.length;       
-    }
-    for (i = 0; i< slides.length; i++) {
-        slides[i].style.display = "none";        
-    } 
-    for (i=0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active","");        
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active"; 
-    
-}
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName('mySlides');
+  var dots = document.getElementsByClassName('dot');
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+} 
+
 //TABS
+function openSide2(tabName){
+    var i,tabcontent,tablinks;
+    
+    tabcontent=document.getElementsByClassName("tabcontent");
+    for(i=0;i<tabcontent.length;i++){
+        tabcontent[i].style.display= "none";
+    }
+    tablinks=document.getElementsByClassName("tablinks");
+    for (i= 0; i<tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active","");
+    }
+    document.getElementById(tabName).style.display="flex";   
+}
 function openSide(tabName){
     var i,tabcontent,tablinks;
     
@@ -86,7 +86,6 @@ function closeSidebar(){
     document.getElementById("sidebar").style.width="0";
 }
 document.body.addEventListener('click',closeSidebar,true);
-//VALIDATION
 //CART
 const cartbtn=document.querySelector(".main-container");
 const cartdiv=document.getElementById('cartdiv');
@@ -127,5 +126,59 @@ function clear(m){
     if(any.classList[0]==="removecart"){
         const parent= any.parentElement;
         parent.remove();
+    }else{
+        const text = document.createElement('div');
+        text.id.add('text');
+        text.innerHTML="No items in cart"
+    }
+}
+//OVERLAY CART
+const overlay = document.getElementById('cartdiv');
+const overlayBtn = document.getElementById('musiCart');
+
+overlayBtn.onclick= function(){
+    if(overlay.innerText == 'No items in cart'){
+        alert("No items in cart");
+    }else if(overlay.innerText == ''){
+        alert("No items in cart");
+    }else{
+        openCart()
+    }
+}
+function openCart(){
+        document.getElementById('myCart').style.display="block";
+    }
+function closeCart(){
+    document.getElementById('myCart').style.display="none";
+}
+
+//RADIO BUTTONS
+const mobile_money = document.getElementById("mobile_money");
+const mobile_money2 = document.getElementById("mobile_money2");
+const credit_card = document.getElementById("credit_card");
+const credit_card2 = document.getElementById("credit_card2");
+const usual_location =document.getElementById("usual_location");
+const location1 = document.getElementById("location");
+const location2 = document.getElementById("location2");
+mobile_money.onclick = function(){
+    if(mobile_money.checked){
+        mobile_money2.style.display= "flex";
+        credit_card2.style.display= "";
+    }
+}
+credit_card.onclick = function(){
+    if(credit_card.checked){
+        credit_card2.style.display= "block";
+        mobile_money2.style.display= "";
+    }
+}
+usual_location.onclick = function(){
+    if(usual_location.checked){
+        location2.style.display="";
+    }
+}
+location1.onclick = function(){
+    if(location1.checked){
+        location2.style.display="block"
     }
 }
